@@ -1,5 +1,6 @@
 package com.filipbezserca.colotpallet;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -34,17 +35,21 @@ public class PaletteActivity extends AppCompatActivity {
 
                 //start drugiego activity
                 //Intent - przechowuje dane, jak jest intencja
-                Intent intent = new Intent(PaletteActivity.this, ColorActivity.class);
-                startActivity(intent);
+                addColor();
 
             }
         });
     }
 
+    private void addColor() {
+        Intent intent = new Intent(PaletteActivity.this, ColorActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_palette, menu);
         return true;
     }
 
@@ -56,7 +61,10 @@ public class PaletteActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
+            addColor();
+            return true;
+        } else if (id == R.id.action_clear) {
             return true;
         }
 
