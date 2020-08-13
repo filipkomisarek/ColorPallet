@@ -22,12 +22,21 @@ public class PaletteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        //obsługa activity
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //otwarcie paska 'snakbar'
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                //start drugiego activity
+                //Intent - przechowuje dane, jak jest intencja
+                Intent intent = new Intent(PaletteActivity.this, ColorActivity.class);
+                startActivity(intent);
+
             }
         });
     }
