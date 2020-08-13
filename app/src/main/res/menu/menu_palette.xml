@@ -5,16 +5,17 @@
     tools:ignore="ExtraText">
     <!-- -->
 
+    <!--id - domyslna nazwa action_cos -->
+    orderInCategory - wartosc wedlug ktorej ustawia kolejnosc, moze go nie byc -->
+    <!--title - tytul-->
+    <!--icon - ikonka na title barze -->
     <item
         android:id="@+id/action_add"
         android:orderInCategory="90"
         android:title="Add"
-        android:icon="@mipmap/ic_action_Add"
+        android:icon="@mipmap/ic_action_add"
         app:showAsAction="ifRoom"/>
-    <!--id - domyslna nazwa action_cos -->
-    <!--orderInCategory - wartosc wedlug ktorej ustawia kolejnosc, moze go nie byc -->
-    <!--title - tytul-->
-    <!--icon - ikonka na title barze -->
+
 
     <!-- Menu -> Clear all -->
     <item
