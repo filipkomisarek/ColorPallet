@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 public class PaletteActivity extends AppCompatActivity {
 
+    public static final String LOG_TAG = PaletteActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +36,40 @@ public class PaletteActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 //start drugiego activity
-                //Intent - przechowuje dane, jak jest intencja
                 addColor();
 
             }
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
     private void addColor() {
+        //Intent - przechowuje dane, jaka jest intencja
         Intent intent = new Intent(PaletteActivity.this, ColorActivity.class);
         startActivity(intent);
     }
