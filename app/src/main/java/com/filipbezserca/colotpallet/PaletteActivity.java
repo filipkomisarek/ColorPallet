@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
@@ -40,32 +41,38 @@ public class PaletteActivity extends AppCompatActivity {
 
             }
         });
+        Log.d(LOG_TAG, "onCreate");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(LOG_TAG);
+        //logowanie informacji do wyswietlenia
+        Log.d(LOG_TAG, "onDestroy");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        Log.d(LOG_TAG, "onStart");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        Log.d(LOG_TAG, "onStop");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(LOG_TAG, "onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        Log.d(LOG_TAG, "onPause");
     }
 
     private void addColor() {
