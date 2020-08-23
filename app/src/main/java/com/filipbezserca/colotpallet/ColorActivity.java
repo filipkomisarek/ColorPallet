@@ -7,6 +7,8 @@ import androidx.core.app.NavUtils;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.view.MenuItem;
+
 public class ColorActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = ColorActivity.class.getSimpleName();
