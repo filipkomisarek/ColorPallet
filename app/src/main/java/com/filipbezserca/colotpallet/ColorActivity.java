@@ -1,6 +1,8 @@
 package com.filipbezserca.colotpallet;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,11 +10,16 @@ import android.util.Log;
 public class ColorActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = ColorActivity.class.getSimpleName();
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
+        // wywolanie actionbar do cofniecia w gore
+        actionBar = getSupportActionBar();
+        // wyswietlenie strzalki do cofniecia w gore
+        actionBar.setDisplayHomeAsUpEnabled(true);
         Log.d(LOG_TAG, "onCreate");
     }
 
@@ -45,5 +52,16 @@ public class ColorActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(LOG_TAG, "onPause");
+    }
+
+    // obsluga klikniecia na strzalke do cofniecia w gore
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
